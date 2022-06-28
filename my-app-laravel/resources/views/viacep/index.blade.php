@@ -11,7 +11,7 @@
         <form action="{{ route('viacep.index.post') }}" method="post">
             @csrf
             <input type="text" name="cep">
-            <button type="submit">ENVIAR</button>
+            <button type="submit">ENVIAR2</button>
         </form>
     </div>
 </body>
