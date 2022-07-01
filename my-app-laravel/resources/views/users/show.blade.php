@@ -9,7 +9,8 @@
                 <th scope="col">Nome</th>
                 <th scope="col">E-mail</th>
                 <th scope="col">Cadastro</th>
-                <th scope="col">Ações</th>
+                <th scope="col">Informações</th>
+                <th scope="col">Excluir</th>
             </tr>
         </thead>
         <tbody class="text-center">
@@ -19,8 +20,14 @@
                     <td>{{ $user->email }}</td>
                     <td>{{ date('d-m-Y - H:i',strtotime($user->created_at)) }}</td>
                     <td>
-                        <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-warning text-light">Editar</a>
-                        <a href="" class="btn btn-sm btn-danger">Excluir</a>
+                        <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-warning text-white">✏️</a>
+                    </td>
+                    <td>  
+                        <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn btn-sm btn-danger text-white">🗑️</button>
+                        </form>
                     </td>
                 </tr>
         </tbody>
