@@ -18,9 +18,12 @@
             <li class="nav-item">
                 <a class="nav-link text-white" href="/users/create">Novo Usuário</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="/posts">Posts</a>
+            </li>
         </div>
       </nav>
-    <div class="container p-3 w-50">
+    <div class="container p-3 w-75">
         @yield('body')
     </div>
 </body>
