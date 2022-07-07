@@ -9,18 +9,18 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     protected $user;
-    protected $post;
+    protected $posts;
 
-    public function __construct(User $user, Post $post)
+    public function __construct(User $user, Post $posts)
     {
         $this->user = $user;
-        $this->post = $post;
+        $this->posts = $posts;
     }
 
     public function index()
     {
 
-        $posts = $this->post()->all();
+        $posts = Post::paginate(5);
 
         return view('posts.index', compact('posts'));
 
