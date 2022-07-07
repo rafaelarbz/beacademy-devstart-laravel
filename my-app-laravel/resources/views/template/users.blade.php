@@ -10,6 +10,16 @@
 
 </head>
 <body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link text-white" href="/users">Lista</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="/users/create">Novo Usuário</a>
+            </li>
+        </div>
+      </nav>
     <div class="container p-3 w-50">
         @yield('body')
     </div>
