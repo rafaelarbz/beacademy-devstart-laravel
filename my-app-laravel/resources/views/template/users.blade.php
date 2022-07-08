@@ -10,19 +10,48 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container justify-content-around">
-            <div class="nav-item">
-                <a class="nav-link text-white" href="/users">Lista</a>
-            </div>
-            <div class="nav-item">
-                <a class="nav-link text-white" href="/users/create">Novo Usuário</a>
-            </div>
-            <div class="nav-item">
-                <a class="nav-link text-white" href="/posts">Posts</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container justify-content-between">
+            <div class="row">
+                <div class="col-10">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/users">Usuários</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/posts">Posts</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-2">
+                    <ul class="navbar-nav mr-auto">
+                        @if (Auth::user())
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="">User</a>
+                            </li>
+                            <li class="nav-item">
+                                <form action="{{ route('logout') }}" method="post">
+                                    @csrf
+                                    <x-reponsive-nav-link :href="route('logout')"
+                                        onclick="event.preventDefault();
+                                         this.closest('form').submit();">
+                                    {{ __('Sair') }}
+                                    </x-reponsive-nav-link>
+                                </form>
+                            </li>
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ route('login') }}">Username</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ route('register') }}">Registre-se</a>
+                            </li>
+                        @endif
+                    </ul>
+                </div>
             </div>
         </div>
-      </nav>
+    </nav>
     <div class="container p-3 w-75">
         @yield('body')
     </div>
