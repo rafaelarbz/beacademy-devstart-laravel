@@ -11,7 +11,7 @@
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
-        <div class="container justify-content-around">
+        <div class="container">
             <div class="nav-item">
                 <a class="nav-link text-white" href="/users">Lista</a>
             </div>
@@ -20,6 +20,14 @@
             </div>
             <div class="nav-item">
                 <a class="nav-link text-white" href="/posts">Posts</a>
+            </div>
+            <div class="nav-item">
+                <form action="{{ route('users.index') }}" method="GET">
+                    <div class="input-group">
+                        <input type="search" class="form-control rounded" placeholder="Pesquisar Usuário" name="search"/>
+                        <button type="submit" class="btn btn-outline-light">🔍</button>
+                    </div>
+                </form>
             </div>
         </div>
       </nav>
