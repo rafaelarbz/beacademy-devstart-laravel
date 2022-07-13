@@ -34,6 +34,13 @@
           <input type="file" class="form-control form-control-md" id="image" name="image">
         </div>
 
+        <div class="form-check mb-5">
+          <input class="form-check-input" type="checkbox" value="2" id="admin" name="admin">
+          <label class="form-check-label" for="admin">
+            Administrador
+          </label>
+        </div>
+
         <button type="submit" class="btn btn-primary">Enviar</button>
         
     </form>
