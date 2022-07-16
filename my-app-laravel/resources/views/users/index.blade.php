@@ -31,6 +31,7 @@
                 <th scope="col">Nome</th>
                 <th scope="col">E-mail</th>
                 <th scope="col">Postagens</th>
+                <th scope="col">Moeda</th>
                 <th scope="col">Cadastro</th>
                 <th scope="col">Detalhes</th>
             </tr>
@@ -47,7 +48,8 @@
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td><a href="{{ route('posts.show', $user->id)}}" class="btn btn-sm btn-outline-dark">Postagens - {{$user->posts->count()}}</a></td>
-                    <td>{{ date('d-m-Y - H:i',strtotime($user->created_at)) }}</td>
+                    <td>{{ formatMoney(5000)}}</td>
+                    <td>{{ formatDateTime($user->created_at )}}</td>
                     <td><a href="{{ route('users.show', $user->id)}}" class="btn btn-sm btn-primary text-light">Visualizar</a></td>
                 </tr>
             @endforeach
